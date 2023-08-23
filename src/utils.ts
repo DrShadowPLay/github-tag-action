@@ -44,7 +44,7 @@ export async function getCommits(
   return commits
     .filter((commit) => !!commit.commit.message)
     .map((commit) => ({
-      message: commit.commit.message.replace('WXF\-\d\-',''),
+      message: commit.commit.message.replace(/WXF\-\d\-/,''),
       hash: commit.sha,
     }));
 }
