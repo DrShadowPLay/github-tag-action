@@ -83,7 +83,7 @@ export function getLatestPrereleaseTag(
 }
 
 export function mapCustomReleaseRules(customReleaseTypes: string) {
-  core.debug(`Custom release types: ${customReleaseTypes}`);
+  core.info(`Custom release types: ${customReleaseTypes}`);
   const releaseRuleSeparator = ',';
   const releaseTypeSeparator = ':';
 
@@ -100,7 +100,7 @@ export function mapCustomReleaseRules(customReleaseTypes: string) {
       } 
 
       const defaultRule = defaultChangelogRules[parts[0].toLowerCase()];
-      core.debug(`Default rule for ${parts[0]}: ${JSON.stringify(defaultRule)}`);
+      core.info(`Default rule for ${parts[0]}: ${JSON.stringify(defaultRule)}`);
       if (customReleaseRule.length !== 3) {
         core.debug(
           `${customReleaseRule} doesn't mention the section for the changelog.`
