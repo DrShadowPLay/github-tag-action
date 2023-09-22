@@ -122,7 +122,7 @@ export default async function main() {
     core.setOutput('previous_tag', previousTag.name);
 
     commits = await getCommits(previousTag.commit.sha, commitRef);
-    core.info('AAAAAAAAAAAGGGGGGGGGGGGGGG:'+commits.map((commit) => commit.message).join('\n'));
+    core.info('AAAAAAAAAAAGGGGGGGGGGGGGGGM:'+commits.map((commit) => commit.message).join('\n'));
     let bump = await analyzeCommits(
       {
         releaseRules: mappedReleaseRules
